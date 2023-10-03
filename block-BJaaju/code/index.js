@@ -3,7 +3,7 @@ let root = document.querySelector("ul");
 
 const url = `https://api.unsplash.com/photos/?client_id=h1NCeCvRf97QNOtpE24VH3w8gF6KI_CateLkSp1UcIY`;
 const getSearchUrl = (query) =>
-  `https://api.unsplash.com/search/photos?query=${query}&?client_id=h1NCeCvRf97QNOtpE24VH3w8gF6KI_CateLkSp1UcIY`;
+  `https://api.unsplash.com/search/photos?&query=${query}&client_id=h1NCeCvRf97QNOtpE24VH3w8gF6KI_CateLkSp1UcIY`;
 
 function fetch(url, successHandler) {
   let xhr = new XMLHttpRequest();
@@ -27,6 +27,7 @@ function displayImages(images) {
 }
 
 fetch(url, displayImages);
+
 function handleSearch(event) {
   if (event.keyCode === 13 && input.value) {
     fetch(getSearchUrl(input.value), (searchResult) => {
