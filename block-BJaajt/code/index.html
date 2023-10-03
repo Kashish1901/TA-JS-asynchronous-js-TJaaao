@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetching Data</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: lightgray;
+      }
+      input {
+        margin: 2rem;
+        padding: 1rem;
+
+        border-radius: 2px;
+      }
+      .userimg {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      .cats img {
+        width: 400px;
+        height: 400px;
+        margin: 10px;
+      }
+      h3 {
+        font-size: 32px;
+        margin: 0;
+        text-transform: capitalize;
+      }
+      p {
+        margin: 0;
+        font-size: 18px;
+      }
+      .flex {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      li {
+        list-style: none;
+        font-size: 20px;
+      }
+      li img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .followers,
+      .following {
+        font-size: 30px;
+        font-weight: 800;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter a github username" />
+    <div class="content">
+      <img
+        class="userimg"
+        src="https://images.unsplash.com/photo-1695837432795-a13581601eb4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80"
+        alt="userimage"
+      />
+      <h3>username</h3>
+      <p>@username</p>
+      <div>
+        <p class="followers">Followers:</p>
+        <ul class="flex"></ul>
+      </div>
+      <div>
+        <p class="following">Following:</p>
+        <ul class="flex"></ul>
+      </div>
+    </div>
+    <hr />
+    <div class="cats">
+      <h3>Get Random Cat 🐈‍⬛</h3>
+      <img
+        src="https://media.istockphoto.com/id/1240888678/photo/the-surprised-cat-the-amazement-of-the-cat-open-your-mouth-in-surprise-an-extreme-degree-of.jpg?s=2048x2048&w=is&k=20&c=kZJeI396nsFu3qKRqXv4rmhAbyzcYeO11Z7Wqpk7Ue8="
+      />
+    </div>
+
+    <button>Get New Cat</button>
+    <script src="index.js"></script>
+  </body>
+</html>
