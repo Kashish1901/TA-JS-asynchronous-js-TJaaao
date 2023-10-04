@@ -1,0 +1,84 @@
+i {
+  margin-left: -20px;
+}
+body {
+  background-color: rgb(245, 216, 171);
+}
+header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+select {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 400px;
+  margin-top: 20px;
+}
+.flex {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+p {
+  padding: 10x;
+}
+span {
+  font-size: 20px;
+  border-radius: 16px;
+  background-color: rgb(54, 126, 127);
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+button {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+}
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite;
+}
+
+.spinner {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 5rem;
+  display: none;
+}

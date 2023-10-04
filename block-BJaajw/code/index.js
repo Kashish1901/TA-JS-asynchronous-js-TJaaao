@@ -2,6 +2,20 @@ let newsElm = document.querySelector(".news");
 let select = document.querySelector("select");
 let allNews = [];
 let url = `https://api.spaceflightnewsapi.net/v3/articles?_limit=30`;
+let main = document.querySelector(".main");
+let errorElm = document.querySelector(".error");
+
+function handleErrorMessage(mssg = "Something went wrong...") {
+  main.style.display = "none";
+  errorElm.style.display = "block";
+  errorElm.innerText = mssg;
+}
+
+function handleSpinner(status = false) {
+  if (status) {
+    newsElm.innerHTML = `<div class="donut spinner"></div>`;
+  }
+}
 
 function renderNews(news) {
   newsElm.innerHTML = "";
@@ -37,24 +51,28 @@ function displayOptions(sources) {
   });
 }
 
-fetch(url)
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error(`Error happened: ${res.status}`);
-    } else {
-      return res.json();
-    }
-  })
-  .then((news) => {
-    allNews = news;
-    renderNews(news);
-    let allSOurces = [...new Set(news.map((n) => n.newsSite))];
-    displayOptions(allSOurces);
-  })
-  .catch((error) => {
-    news.innerText = error;
-  })
-  .finally(() => console.log("Promise Settled!"));
+function init() {
+  handleSpinner(true);
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Error happened: ${res.status}`);
+      } else {
+        return res.json();
+      }
+    })
+    .then((news) => {
+      handleSpinner();
+      allNews = news;
+      renderNews(news);
+      let allSOurces = [...new Set(news.map((n) => n.newsSite))];
+      displayOptions(allSOurces);
+    })
+    .catch((error) => {
+      handleErrorMessage(error);
+    })
+    .finally(() => handleSpinner());
+}
 
 select.addEventListener("change", (event) => {
   let source = event.target.value.trim();
@@ -67,3 +85,9 @@ select.addEventListener("change", (event) => {
 
   renderNews(filteredNews);
 });
+
+if (navigator.onLine) {
+  init();
+} else {
+  handleErrorMessage("Check your internet connection❌");
+}
