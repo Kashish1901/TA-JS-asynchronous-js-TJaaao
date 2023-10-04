@@ -18,35 +18,39 @@
         padding: 10px;
         text-align: center;
       }
-      input {
+
+      select {
         text-align: center;
         padding: 10px;
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 15px;
+        font-weight: 600;
         margin-left: 400px;
         margin-top: 20px;
       }
       .flex {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         align-items: center;
       }
-      h3 {
+      p {
+        padding: 10x;
+      }
+      span {
         font-size: 20px;
         border-radius: 16px;
-        padding: 5px 10px;
         background-color: rgb(54, 126, 127);
         color: white;
         box-sizing: border-box;
         text-align: center;
+        padding: 5px 15px;
       }
-      p {
-        padding-right: 10px;
-      }
+
       img {
         width: 200px;
         height: 200px;
-        margin: 20px;
+        margin: 10px;
+        display: flex;
+        align-items: flex-start;
       }
       button {
         background-color: black;
@@ -59,84 +63,14 @@
     <h1>Space News Everywhere</h1>
   </header>
   <body>
-    <input type="text" placeholder="Select a news source" /><i
-      class="fa-solid fa-angle-down"
-    ></i>
+    <div class="options">
+      <select name="" id="">
+        <option value="">Select a news Source</option>
+      </select>
+    </div>
 
-    <ul>
-      <li class="flex">
-        <img
-          src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-        <div>
-          <h3>Space Ship</h3>
-          <p>
-            A digital platform built to provide and connect the domains,
-            hosting, SSL certificates, email, and web tools you need, and to put
-            you in total control.
-          </p>
-          <button>Read More</button>
-        </div>
-      </li>
-      <li class="flex">
-        <img
-          src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-        <div>
-          <h3>Space Ship</h3>
-          <p>
-            A digital platform built to provide and connect the domains,
-            hosting, SSL certificates, email, and web tools you need, and to put
-            you in total control.
-          </p>
-          <button>Read More</button>
-        </div>
-      </li>
-      <li class="flex">
-        <img
-          src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-        <div>
-          <h3>Space Ship</h3>
-          <p>
-            A digital platform built to provide and connect the domains,
-            hosting, SSL certificates, email, and web tools you need, and to put
-            you in total control.
-          </p>
-          <button>Read More</button>
-        </div>
-      </li>
-      '
-      <li class="flex">
-        <img
-          src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-        <div>
-          <h3>Space Ship</h3>
-          <p>
-            A digital platform built to provide and connect the domains,
-            hosting, SSL certificates, email, and web tools you need, and to put
-            you in total control.
-          </p>
-          <button>Read More</button>
-        </div>
-      </li>
-      <li class="flex">
-        <img
-          src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        />
-        <div>
-          <h3>Space Ship</h3>
-          <p>
-            A digital platform built to provide and connect the domains,
-            hosting, SSL certificates, email, and web tools you need, and to put
-            you in total control.
-          </p>
-          <button>Read More</button>
-        </div>
-      </li>
-      '
-    </ul>
+    <ul class="news"></ul>
+
     <script src="index.js"></script>
   </body>
 </html>
